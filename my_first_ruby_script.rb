@@ -5,17 +5,17 @@ You can add, update, display or delete movies in a Hash.
 =end
 
 movies = {
-  momo: 4,
-  thriller: 3,
-  cast_away: 3,
-  magnolia: 4
+    momo: 4,
+    thriller: 3,
+    cast_away: 3,
+    magnolia: 4
 }
 
 puts "Please enter 'add', 'update', 'display' or 'delete':"
 choice=gets.chomp
 
 case choice
-  	when "add"
+    when "add"
   		puts "Please enter a movie title:"
   		title = gets.chomp.downcase
   		if movies[title.to_sym]==nil
