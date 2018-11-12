@@ -1,3 +1,8 @@
+=beginning
+This is just an exercise to learn the syntax of Ruby.
+You can add, update, display or delete movies in a Hash :)
+=end
+
 movies = {
   momo: 4,
   thriller: 3,
