@@ -1,6 +1,7 @@
 =beginning
 This is just an exercise to learn the syntax of Ruby.
-You can add, update, display or delete movies in a Hash :)
+You can add, update, display or delete movies in a Hash.
+[still a little bit confused how many tabs I shoud use :)...]
 =end
 
 movies = {
