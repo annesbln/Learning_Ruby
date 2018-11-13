@@ -1,4 +1,3 @@
-# ing
 # This is just an exercise to learn the syntax of Ruby.
 # You can add, update, display or delete movies in a Hash.
 # This is a tribute to Atom Beautify and the person who told me to never use tabs again :)
