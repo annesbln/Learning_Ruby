@@ -28,9 +28,9 @@ def continue
   STDIN.getch
 end
 
-begin
+until $count == number.to_i do
   puts "#{$count+1}: "+ learned_facts[$count]
   puts ""
   continue()
   $count += 1
-end until $count == number.to_i
+end
