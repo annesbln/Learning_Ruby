@@ -1,8 +1,7 @@
-=begin
-In my very first lesson of the ruby monstas I learned that it is important to write as much code as possible:
-Only via writing code, you actually learn how to code. So this is a small programm to show what we've learned
-within the first three hour session...
-=end
+# In my very first lesson of the ruby monstas I learned that it is important to write as much code as possible:
+# Only via writing code, you actually learn how to code. So this is a small programm to show what we've learned
+# within the first three hour session...
+
 require 'io/console'
 
 puts "This is what I have learned in the first Ruby Monstas session:"
