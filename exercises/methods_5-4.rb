@@ -15,6 +15,7 @@ def leap_year?(n)
   end
 end
 
+# This is the easier solution...
 def leap_year_easy?(n)
   if n % 4 == 0 and n % 100 != 0 or n % 400 == 0
     true
