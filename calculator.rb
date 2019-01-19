@@ -16,7 +16,7 @@ class Calculator
   end
 end
 
-calculator = Calculator.new
+calculator = Calculator.new()
 
 puts calculator.plus(2, 3)
 puts calculator.minus(2, 3)
