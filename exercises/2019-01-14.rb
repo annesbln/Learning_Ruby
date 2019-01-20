@@ -1,4 +1,4 @@
-names = ["Carla", "Anja", "Maren", "Sabrina", "Michael-Paul"]
+names = ["Carla", "Anja", "Maren", "Sabrina", "Michael Patrick Kelly"]
 
 # output the sorted list of names on the terminal
 # surround the whole thing with a box
