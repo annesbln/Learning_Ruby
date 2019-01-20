@@ -19,3 +19,10 @@ lines = numbers.map do |row|
 end
 
 lines.each { |line| puts line }
+
+# lines = numbers.collect do |row|
+#   row = row.collect { |number| "*" * number }
+#   row.join(" ")
+# end
+
+# puts lines

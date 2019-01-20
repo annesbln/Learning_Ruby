@@ -38,40 +38,29 @@ class MailboxTextFormatter
     @mailbox = mailbox
   end
 
-
-
   def format
-    dates = []
-    authors = []
-    subjects = []
-
-    @mailbox.emails.collect do |email|
-      dates.push(email.date)
+    dates = @mailbox.emails.collect do |email|
+      email.date
     end
 
-    @mailbox.emails.collect do |email|
-      authors.push(email.from)
+    authors = @mailbox.emails.collect do |email|
+      email.from
     end
 
-    @mailbox.emails.collect do |email|
-      subjects.push(email.subject)
-    end
-
-    def getMaxLength(inputs)
-      maxDates = inputs.max_by { |input| input.length }
-      maxDates = maxDates.length
-      maxDates
+    subjects = @mailbox.emails.collect do |email|
+      email.subject
     end
 
     maxDates = getMaxLength(dates)
     maxAuthors = getMaxLength(authors)
     maxSubjects = getMaxLength(subjects)
 
+    # Use an array for WIDTHs!
     dateTitle = "Date"
     authorsTitle = "From"
     subjectsTitle = "Subject"
 
-    titleLengthDates = dateTitle.length
+    titleLengthDates = dateTitle.length # remove those!
     titleLengthAuthors = authorsTitle.length
     titleLengthSubjects = subjectsTitle.length
 
@@ -82,13 +71,23 @@ class MailboxTextFormatter
       border,
       header,
       border,
+      # 0.upto(dates.length) do |index| ... end
+      # use ljust!
       "| " + dates[0] + " " * (maxDates-dates[0].length) + " | " + authors[0] + " " * (maxAuthors-authors[0].length) + " | " + subjects[0] + " " * (maxSubjects-subjects[0].length) + " |",
       "| " + dates[1] + " " * (maxDates-dates[1].length) + " | " + authors[1] + " " * (maxAuthors-authors[1].length) + " | " + subjects[1] + " " * (maxSubjects-subjects[1].length) + " |",
       "| " + dates[2] + " " * (maxDates-dates[2].length) + " | " + authors[2] + " " * (maxAuthors-authors[2].length) + " | " + subjects[2] + " " * (maxSubjects-subjects[2].length) + " |",
       border
     ]
-    puts lines
+    # data = [dates, authors, subjects].transpose
+    # lines = data.collect |row| ...
   end
+  # Helper method should be outside the main method! Don't nest methods!
+  
+  private
+  
+    def getMaxLength(inputs)
+      inputs.max_by { |input| input.length }.length
+    end
 
 end
 
@@ -102,4 +101,4 @@ mailbox = Mailbox.new("Ruby Study Group", emails)
 
 formatter = MailboxTextFormatter.new(mailbox)
 
-p formatter.format
+puts formatter.format
