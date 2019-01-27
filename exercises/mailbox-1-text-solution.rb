@@ -81,9 +81,9 @@ class MailboxTextFormatter
     # data = [dates, authors, subjects].transpose
     # lines = data.collect |row| ...
   end
-  # Helper method should be outside the main method! Don't nest methods!
-  
-  private
+  # Helper methods should allways be outside of the main method! Never nest methods!
+  # Private helper methods are indended with two spaces for better readability.
+    private
   
     def getMaxLength(inputs)
       inputs.max_by { |input| input.length }.length
