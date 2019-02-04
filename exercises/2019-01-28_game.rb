@@ -107,8 +107,7 @@ class Game
             "'exit'       will end the game.\n" +
             "'turn left'  will change the direction to the left.\n" +
             "'turn right' will change the direction to the right.\n" +
-            "'move'       will move you 1 step forward in the direction you chose.\n\n"+
-            "Imagine you are standing in a field and an eagle is flying above you. Your head looks like a circle to him...\n\n"
+            "'move'       will move you 1 step forward in the direction you chose.\n\n"
         @player = Player.new
         puts "You are now facing: #{@player.direction}."
     end
