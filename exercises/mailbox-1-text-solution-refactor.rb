@@ -50,7 +50,11 @@ class MailboxTextFormatter
     widths = data.collect do |array|
         array.max_by(&:length).length
     end
-
+    #data.transpose.collect is better
+    #first index by .collect
+    # then the second index
+    # adjusting strings first and then join
+    #border: create the strings first
     border = "+-" + "-" * widths[0] + "-+-" + "-" * widths[1] + "-+-" + "-" * widths[2] + "-+"
     header = "| " + data[0][0].ljust(widths[0]) + " | " + data[1][0].ljust(widths[1]) + " | " + data[2][0].ljust(widths[2]) + " |"
     rows = [ ("| " + data[0][1].ljust(widths[0]) + " | " + data[1][1].ljust(widths[1]) + " | " + data[2][1].ljust(widths[2]) + " |" ),
