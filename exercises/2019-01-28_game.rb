@@ -27,13 +27,13 @@ class Player
         if x < 0
             sorryWall
             @position[0] = x + 1
-        elsif x > @map.width
+        elsif x >= @map.width
             sorryWall
             @position[0] = x - 1
         elsif y < 0
             sorryWall
             @position[1] = y + 1
-        elsif y > @map.length
+        elsif y >= @map.length
             sorryWall
             @position[1] = y - 1
         else
@@ -77,8 +77,8 @@ end
 
 class Map
     def initialize(x_coord, y_coord)
-        @width = 2
-        @length = 2
+        @width = 3
+        @length = 3
         @x_coord = x_coord
         @y_coord = y_coord
     end
@@ -129,17 +129,14 @@ class Game
 
     def turn_left
         @player.turn_left
-        puts "You are now facing: #{@player.direction}."
     end
 
     def turn_right
         @player.turn_right
-        puts "You are now facing: #{@player.direction}."
     end
 
     def move
         @player.move
-        puts "You are now facing: #{@player.direction}."
     end
 
 
@@ -160,6 +157,7 @@ class View
 
     def output
         @position = @player.position
+        @direction = @player.direction
         border = "+" + "-"*3 + "+ \n"
         result = ""
         result = result + border
@@ -168,7 +166,12 @@ class View
             row = "|"
             for x in 0..2
                 if y == @position[1] && x == @position[0]
-                    row = row + "o"
+                    case @direction
+                    when :south then row = row + "v"
+                    when :north then row = row + "^"
+                    when :east then row = row + ">"
+                    when :west then row = row + "<"
+                    end
                 else
                     row = row + " "
                 end
